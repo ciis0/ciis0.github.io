@@ -5,6 +5,9 @@
 In my current project we have an ARO 4 cluster that currently has the project's Active Directory configured for login. (cf.)[https://examples.openshift.pub/cluster-configuration/authentication/activedirectory-ldap/]
 Now I was intrigued whether our Azure AD (where only the Ops team has accounts) could be connected and found [Azure Active Directory Integration With OpenShift 4 ARO 4](https://cloud.redhat.com/blog/openshift-blog-aro-aad).
 
+I hoped to reduce the time I need to spend when copying around my login token for `oc` command. With LDAP I am forced toeach time enter my username and password.
+With Azure AD I have SSO, so as long as my SSO session is valid I can get my token without any click by simply opening the page from history by typing "token" in the address bar and selecting the first entry.
+
 I basically skipped everything from the guid as cluster already exists.
 I made the changes to the auto-generated ARO Service Principal via Portal (`aro-<generated id>` under <em>Azure Active Directory</em> &rarr; <em>App registrations</em>).
 
