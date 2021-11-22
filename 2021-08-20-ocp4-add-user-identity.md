@@ -2,7 +2,7 @@
 
 ## Configuring Azure AD for ARO
 
-In my current project we have an ARO 4 cluster that currently has the project's Active Directory configured for login. (cf.)[https://examples.openshift.pub/cluster-configuration/authentication/activedirectory-ldap/]
+In my current project we have an ARO 4 cluster that currently has the project's Active Directory configured for login. [cf.](https://examples.openshift.pub/cluster-configuration/authentication/activedirectory-ldap/)
 Now I was intrigued whether our Azure AD (where only the Ops team has accounts) could be connected and found [Azure Active Directory Integration With OpenShift 4 ARO 4](https://cloud.redhat.com/blog/openshift-blog-aro-aad).
 
 I hoped to reduce the time I need to spend when copying around my login token for `oc` command. With LDAP I am forced toeach time enter my username and password.
@@ -21,7 +21,7 @@ After successfully logging in via AAD, my new user was there. But I had no permi
 
 I already have a user that is in groups synced from project-AD, but with different name.
 
-After checking whether maybe Azure AD roles could be used, [but that is not supported yet](https://access.redhat.com/solutions/5239211), I decided to go another route:
+After checking whether maybe Azure AD roles could be used, [but that is not supported yet](https://access.redhat.com/solutions/5239211)(see also [RFE-106](https://issues.redhat.com/browse/RFE-106), so I decided to go another route:
 Assigning the identity from AAD to my (project-)AD User.
 
 After playing a little bit around, locking my account out of the cluster, needing to revert to kubeadmin I found the (manual) steps necessary:
